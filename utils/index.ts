@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-export const createOrGetUser = async (response: any) => {
+export const createOrGetUser = async (response: any, addUser: any) => {
   const decodedCredential: {
     name: string;
     picture: string;
@@ -16,4 +16,8 @@ export const createOrGetUser = async (response: any) => {
     userName: name,
     image: picture,
   };
+
+  await axios.post("http://localhost:3000/api/auth", user);
+
+  addUser(user);
 };

@@ -27,6 +27,8 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     }
   };
 
+  console.log(post);
+
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div className="mb-7">
@@ -66,7 +68,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
         className="lg-ml-20 flex gap-4 relative"
       >
         <div className="rounded-3xl">
-          <Link href="/">
+          <Link href={`/detail/${post._id}`}>
             <video
               className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[530] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
               loop
